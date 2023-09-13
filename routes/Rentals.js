@@ -75,6 +75,22 @@ router.delete("/rentals", async (req, res) => {
   }
 });
 
+//get listings
+router.get("/listings", async (req, res) => {
+  try {
+    var data = await Rentals.find();
+    res.json({
+      data: data,
+      statusCode: 200,
+      message: "Read All listings",
+    });
+  } catch (error) {
+    res.json({
+      statusCode: 500,
+      message: error.message,
+    });
+  }
+});
 
 
 module.exports = router;
