@@ -14,6 +14,7 @@ var NewPropartyRouter = require("./routes/NewPropaty");
 var TenantsRouter = require("./routes/Tenants");
 var AddStaffMember = require ("./routes/AddStaffMember");
 var RentalOwners = require ("./routes/RentalOwners");
+var ApplicantRouter = require ("./routes/Applicants");
 var app = express();
 
 // view engine setup
@@ -35,6 +36,7 @@ app.use("/newproparty", NewPropartyRouter);
 app.use("/tenant", TenantsRouter);
 app.use("/addstaffmember",AddStaffMember);
 app.use("/rentalowner",RentalOwners);
+app.use("/applicant",ApplicantRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));

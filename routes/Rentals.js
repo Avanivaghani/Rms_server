@@ -58,4 +58,23 @@ router.delete("/rentals", async (req, res) => {
   }
 });
 
+ //edit rentals 
+ router.put("/rentals/:id", async (req, res) => {
+  try {
+    let result = await Rentals.findByIdAndUpdate(req.params.id, req.body);
+    res.json({
+      statusCode: 200,
+      data: result,
+      message: "Rentals Data Updated Successfully",
+    });
+  } catch (err) {
+    res.json({
+      statusCode: 500,
+      message: err.message,
+    });
+  }
+});
+
+
+
 module.exports = router;

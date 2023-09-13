@@ -21,6 +21,11 @@ const registerSchema = new Schema({
   rentalOwner_operatingAccount: { type: String },
   rentalOwner_propertyReserve: { type: Number },
 
+  //rooms
+
+  rental_bed: { type: String },
+  rental_bath: { type: String },
+
   rental_units: { type: String },
   rental_unitsAdress: { type: String },
   rental_soft: { type: String },
